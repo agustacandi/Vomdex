@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.home.HomeFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/app_name"
+                style="@style/FontBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textAllCaps="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/favorite_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/favorite_menu"
+                android:layout_marginEnd="16dp"
+                app:tint="?attr/colorAccent"
+                android:background="@color/transparent"
+                android:src="@drawable/baseline_favorite_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/app_name"
+                app:layout_constraintBottom_toBottomOf="@id/app_name"/>
+
+            <TextView
+                style="@style/VexHeadingText"
+                android:id="@+id/now_playing_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/now_playing"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/app_name" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_now_playing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/now_playing_text"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <include
+                android:id="@+id/shimmer_now_playing"
+                layout="@layout/shimmer_movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/now_playing_text" />
+
+            <TextView
+                style="@style/VexHeadingText"
+                android:id="@+id/popular_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/popular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/now_playing_text" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/popular_text"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <include
+                android:id="@+id/shimmer_popular"
+                layout="@layout/shimmer_movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/popular_text" />
+
+            <TextView
+                style="@style/VexHeadingText"
+                android:id="@+id/top_rated_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/top_rated"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/popular_text" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_top_rated"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_rated_text"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <include
+                android:id="@+id/shimmer_top_rated"
+                layout="@layout/shimmer_movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_rated_text" />
+
+            <TextView
+                style="@style/VexHeadingText"
+                android:id="@+id/upcoming_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/upcoming"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_rated_text" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_upcoming"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upcoming_text"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <include
+                android:id="@+id/shimmer_upcoming"
+                layout="@layout/shimmer_movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upcoming_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

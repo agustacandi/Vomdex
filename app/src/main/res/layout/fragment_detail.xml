@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.detail.DetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/transparent"
+            android:contentDescription="@string/back"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorAccent" />
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/transparent"
+            android:contentDescription="@string/back"
+            android:src="@drawable/baseline_favorite_border_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/detail_movie_poster"
+            android:layout_width="200dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="80dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/VexImageStyle"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/detail_movie_name"
+            style="@style/FontBlack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_movie_poster"
+            tools:text="@tools:sample/lorem" />
+
+        <LinearLayout
+            android:id="@+id/movie_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@id/detail_movie_name"
+            app:layout_constraintStart_toStartOf="@id/detail_movie_name"
+            app:layout_constraintTop_toBottomOf="@id/detail_movie_name">
+
+            <ImageView
+                android:id="@+id/star_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/star_icon"
+                android:src="@drawable/baseline_star_24"
+                app:tint="@color/yellow" />
+
+            <TextView
+                android:id="@+id/popularity"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                tools:text="Score" />
+
+            <ImageView
+                android:id="@+id/calendar_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/calendar_icon"
+                android:src="@drawable/baseline_calendar_month_24"
+                app:tint="?attr/colorAccent" />
+
+            <TextView
+                android:id="@+id/release"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                tools:text="Release" />
+
+            <ImageView
+                android:id="@+id/genre_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/genre_icon"
+                android:src="@drawable/baseline_movie_filter_24"
+                app:tint="?attr/colorAccent" />
+
+            <TextView
+                android:id="@+id/genre"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                tools:text="Genre" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/about_movie_title"
+            style="@style/FontBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/about_movie"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/movie_info" />
+
+        <TextView
+            android:id="@+id/about_movie"
+            style="@style/FontRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about_movie_title"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/credits_title"
+            style="@style/FontBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/credits"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about_movie" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cast_rv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/credits_title" />
+
+        <include
+            android:id="@+id/shimmer_cast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            layout="@layout/shimmer_cast"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/credits_title"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <include
+            android:id="@+id/shimmer_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            layout="@layout/shimmer_detail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

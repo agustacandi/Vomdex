@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="0dp"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/placeholder_movie_list_poster"
+            android:layout_width="95dp"
+            android:layout_height="120dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/VexImageStyle" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/placeholder_movie_list_title"
+            android:layout_width="200dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/gray"
+            app:layout_constraintStart_toEndOf="@id/placeholder_movie_list_poster"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/VexShimmerRounded" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/placeholder_vote_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray"
+            app:shapeAppearanceOverlay="@style/VexShimmerRounded"
+            app:layout_constraintStart_toEndOf="@id/placeholder_movie_list_poster"
+            app:layout_constraintTop_toBottomOf="@id/placeholder_movie_list_title" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/placeholder_vote"
+            android:layout_width="50dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/gray"
+            app:layout_constraintStart_toEndOf="@id/placeholder_vote_icon"
+            app:layout_constraintTop_toTopOf="@id/placeholder_vote_icon"
+            app:layout_constraintBottom_toBottomOf="@id/placeholder_vote_icon"
+            app:shapeAppearanceOverlay="@style/VexShimmerRounded" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/placeholder_date_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray"
+            app:shapeAppearanceOverlay="@style/VexShimmerRounded"
+            app:layout_constraintStart_toEndOf="@id/placeholder_movie_list_poster"
+            app:layout_constraintTop_toBottomOf="@id/placeholder_vote_icon" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/placeholder_date"
+            android:layout_width="100dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/gray"
+            app:layout_constraintStart_toEndOf="@id/placeholder_date_icon"
+            app:layout_constraintTop_toTopOf="@id/placeholder_date_icon"
+            app:layout_constraintBottom_toBottomOf="@id/placeholder_date_icon"
+            app:shapeAppearanceOverlay="@style/VexShimmerRounded" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

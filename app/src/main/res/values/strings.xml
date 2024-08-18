@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Vomdex</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="favorite_menu">Favorite menu</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="about">About</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="search_movie">Search movie…</string>
+    <string name="vote_icon">Vote icon</string>
+    <string name="date_icon">Date icon</string>
+    <string name="early_submission_for_dicoding_android_developer_expert_class">Early submission for\nDicoding Android Developer Expert class</string>
+    <string name="thanks_to">Thanks to TMDB for providing the API</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="back">Back</string>
+    <string name="about_movie">About Movie</string>
+    <string name="credits">Credits</string>
+    <string name="cast_image">Cast image</string>
+    <string name="star_icon">Star icon</string>
+    <string name="calendar_icon">Calendar icon</string>
+    <string name="genre_icon">Genre icon</string>
+</resources>
