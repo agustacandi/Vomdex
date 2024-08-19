@@ -60,9 +60,6 @@ dependencies {
     // Facebook Shimmer
     implementation(libs.shimmer)
 
-    // Coil
-    implementation(libs.coil)
-
     // Coroutine
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)

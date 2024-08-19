@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.agustacandi.learn.core.domain.favorite.mapper.toDomain
 import dev.agustacandi.learn.core.domain.favorite.usecase.MovieFavoriteUseCase
 import dev.agustacandi.learn.core.domain.movie.model.Movie
 import kotlinx.coroutines.launch
@@ -16,8 +15,22 @@ class FavoriteViewModel(private val movieFavoriteUseCase: MovieFavoriteUseCase) 
     fun getFavoriteMovie() {
         viewModelScope.launch {
             movieFavoriteUseCase.getAllFavorite().collect {
-                _favorite.value = it.toDomain()
+                _favorite.value = it
             }
+        }
+    }
+
+    fun removeFavorite(id: Int) {
+        viewModelScope.launch {
+            movieFavoriteUseCase.removeFavorite(id)
+            getFavoriteMovie()
+        }
+    }
+
+    fun removeAllFavorite() {
+        viewModelScope.launch {
+            movieFavoriteUseCase.removeAllFavorite()
+            getFavoriteMovie()
         }
     }
 

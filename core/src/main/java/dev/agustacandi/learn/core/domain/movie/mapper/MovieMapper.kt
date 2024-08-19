@@ -1,17 +1,9 @@
 package dev.agustacandi.learn.core.domain.movie.mapper
 
 import dev.agustacandi.learn.core.data.movie.remote.response.DetailMovieResponse
-import dev.agustacandi.learn.core.data.movie.remote.response.GenresItem
 import dev.agustacandi.learn.core.data.movie.remote.response.MovieItem
-import dev.agustacandi.learn.core.data.movie.remote.response.ProductionCompaniesItem
-import dev.agustacandi.learn.core.data.movie.remote.response.ProductionCountriesItem
-import dev.agustacandi.learn.core.data.movie.remote.response.SpokenLanguagesItem
 import dev.agustacandi.learn.core.domain.movie.model.DetailMovie
-import dev.agustacandi.learn.core.domain.movie.model.Genres
 import dev.agustacandi.learn.core.domain.movie.model.Movie
-import dev.agustacandi.learn.core.domain.movie.model.ProductionCompanies
-import dev.agustacandi.learn.core.domain.movie.model.ProductionCountries
-import dev.agustacandi.learn.core.domain.movie.model.SpokenLanguages
 
 fun List<MovieItem>.toDomain(): List<Movie> {
     return this.map {

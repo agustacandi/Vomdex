@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
-import dev.agustacandi.learn.core.data.favorite.local.entity.MovieEntity
 import dev.agustacandi.learn.core.data.lib.RemoteResponse
 import dev.agustacandi.learn.core.domain.movie.model.DetailMovie
+import dev.agustacandi.learn.core.domain.movie.model.Movie
 import dev.agustacandi.learn.core.utils.ConstVal
 import dev.agustacandi.learn.core.utils.Helper
 import dev.agustacandi.learn.core.utils.ext.getYear
@@ -35,7 +35,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     ): FragmentDetailBinding = FragmentDetailBinding.inflate(inflater, container, false)
 
     override fun initIntent() {
-        movieId = arguments?.getString("movieId")
+        movieId = arguments?.getString(ConstVal.KEY_MOVIE_ID)
     }
 
     override fun initUI() {
@@ -143,7 +143,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
         if (isFavorite) {
             detailViewModel.removeFavorite(movieId ?: "")
         } else {
-            val movie = MovieEntity(
+            val movie = Movie(
                 id = detailMovie?.id ?: 0,
                 overview = detailMovie?.overview ?: "",
                 title = detailMovie?.title ?: "",

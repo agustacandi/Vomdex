@@ -15,11 +15,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 // Logging Interceptor for debugging purposes (only run in debug mode)
-private val loggingInterceptor = if (BuildConfig.DEBUG) {
-    HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-} else {
-    HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
-}
+private val loggingInterceptor = HttpLoggingInterceptor().setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE)
 
 // Moshi for JSON parsing
 private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()

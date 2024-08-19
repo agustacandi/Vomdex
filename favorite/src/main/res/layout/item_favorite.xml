@@ -31,7 +31,7 @@
             android:layout_marginHorizontal="16dp"
             android:ellipsize="end"
             android:maxLines="1"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/remove_favorite_button"
             app:layout_constraintStart_toEndOf="@id/movie_list_poster"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/lorem/random" />
@@ -81,6 +81,19 @@
             app:layout_constraintStart_toEndOf="@id/date_icon"
             app:layout_constraintTop_toTopOf="@id/date_icon"
             tools:text="2002" />
+
+        <ImageButton
+            android:id="@+id/remove_favorite_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:tint="@color/white"
+            android:background="@color/red"
+            android:src="@drawable/baseline_delete_24"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/remove_favorite"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

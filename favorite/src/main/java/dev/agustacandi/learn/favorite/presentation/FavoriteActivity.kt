@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.agustacandi.learn.favorite.databinding.ActivityFavoriteBinding
 import dev.agustacandi.learn.favorite.di.favoriteModule
-import dev.agustacandi.learn.vomdex.presentation.search.MovieListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
@@ -23,14 +22,22 @@ class FavoriteActivity : AppCompatActivity() {
 
         inject()
 
-        binding.backButton.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+        binding.apply {
+            backButton.setOnClickListener {
+                onBackPressedDispatcher.onBackPressed()
+            }
+
+            removeAllFavoriteBtn.setOnClickListener {
+                favoriteViewModel.removeAllFavorite()
+            }
         }
 
         favoriteViewModel.getFavoriteMovie()
 
         favoriteViewModel.favorite.observe(this) {
-            val movieAdapter = MovieListAdapter(isActivity = true)
+            val movieAdapter = FavoriteAdapter { id ->
+                favoriteViewModel.removeFavorite(id)
+            }
             movieAdapter.submitList(it)
             binding.rvFavorite.apply {
                 adapter = movieAdapter

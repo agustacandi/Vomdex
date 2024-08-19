@@ -34,7 +34,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun initAction() {
         binding.favoriteButton.setOnClickListener {
             try {
-                moveToChatActivity()
+                moveToFavoriteActivity()
             } catch (e: Exception) {
                 Helper.showToast(requireActivity(), "Module not found")
             }
@@ -183,7 +183,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             }
     }
 
-    private fun moveToChatActivity() {
+    private fun moveToFavoriteActivity() {
         startActivity(Intent(requireActivity(), Class.forName("dev.agustacandi.learn.favorite.presentation.FavoriteActivity")))
     }
 

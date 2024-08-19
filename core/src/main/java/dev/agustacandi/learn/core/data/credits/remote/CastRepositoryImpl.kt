@@ -16,11 +16,9 @@ class CastRepositoryImpl(private val creditService: CreditService) : CastReposit
             emit(RemoteResponse.Loading)
             val response = creditService.getCredits(movieId)
             val data = response.cast?.toDomain()
-            if (data.isNullOrEmpty()) {
-                emit(RemoteResponse.Empty)
-            } else {
-                emit(RemoteResponse.Success(data))
-            }
+            emit(
+                if (data.isNullOrEmpty()) RemoteResponse.Empty else RemoteResponse.Success(data)
+            )
         } catch (e: Exception) {
             emit(RemoteResponse.Error(e.message.toString()))
         }

@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.agustacandi.learn.core.data.favorite.local.entity.MovieEntity
 import dev.agustacandi.learn.core.data.lib.RemoteResponse
 import dev.agustacandi.learn.core.domain.credits.model.Cast
 import dev.agustacandi.learn.core.domain.credits.usecase.CastUseCase
 import dev.agustacandi.learn.core.domain.favorite.usecase.MovieFavoriteUseCase
 import dev.agustacandi.learn.core.domain.movie.model.DetailMovie
+import dev.agustacandi.learn.core.domain.movie.model.Movie
 import dev.agustacandi.learn.core.domain.movie.usecase.MovieUseCase
 import kotlinx.coroutines.launch
 
@@ -51,7 +51,7 @@ class DetailViewModel(
         }
     }
 
-    fun addFavorite(movie: MovieEntity) {
+    fun addFavorite(movie: Movie) {
         viewModelScope.launch {
             movieFavoriteUseCase.addFavorite(movie)
             _isFavorite.value = true
