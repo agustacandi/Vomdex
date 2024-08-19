@@ -8,4 +8,5 @@ interface MovieFavoriteUseCase {
     fun getAllFavorite(): Flow<List<Movie>>
     fun isFavorite(id: Int): Flow<Boolean>
     suspend fun removeFavorite(id: Int)
+    suspend fun removeAllFavorite()
 }

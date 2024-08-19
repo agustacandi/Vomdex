@@ -20,4 +20,18 @@ class FavoriteViewModel(private val movieFavoriteUseCase: MovieFavoriteUseCase) 
         }
     }
 
+    fun removeFavorite(id: Int) {
+        viewModelScope.launch {
+            movieFavoriteUseCase.removeFavorite(id)
+            getFavoriteMovie()
+        }
+    }
+
+    fun removeAllFavorite() {
+        viewModelScope.launch {
+            movieFavoriteUseCase.removeAllFavorite()
+            getFavoriteMovie()
+        }
+    }
+
 }

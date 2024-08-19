@@ -13,4 +13,6 @@ class MovieFavoriteInteractor(private val movieFavoriteRepository: MovieFavorite
     override fun isFavorite(id: Int): Flow<Boolean> = movieFavoriteRepository.isFavorite(id)
 
     override suspend fun removeFavorite(id: Int) = movieFavoriteRepository.removeFavorite(id)
+
+    override suspend fun removeAllFavorite() = movieFavoriteRepository.removeAllFavorite()
 }

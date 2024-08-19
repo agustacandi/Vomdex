@@ -24,4 +24,6 @@ class MovieFavoriteRepositoryImpl(private val movieDao: MovieDao) : MovieFavorit
     }.flowOn(Dispatchers.IO)
 
     override suspend fun removeFavorite(id: Int) = movieDao.removeFavorite(id)
+
+    override suspend fun removeAllFavorite() = movieDao.removeAllFavorite()
 }
