@@ -47,11 +47,9 @@ class MovieRepositoryImpl(private val movieService: MovieService) : MovieReposit
             emit(RemoteResponse.Loading)
             val response = movieService.getTopRated()
             val data = response.results?.toDomain()
-            if (data.isNullOrEmpty()) {
-                emit(RemoteResponse.Empty)
-            } else {
-                emit(RemoteResponse.Success(data))
-            }
+            emit(
+                if (data.isNullOrEmpty()) RemoteResponse.Empty else RemoteResponse.Success(data)
+            )
         } catch (e: Exception) {
             emit(RemoteResponse.Error(e.message.toString()))
         }
@@ -62,11 +60,9 @@ class MovieRepositoryImpl(private val movieService: MovieService) : MovieReposit
             emit(RemoteResponse.Loading)
             val response = movieService.getUpcoming()
             val data = response.results?.toDomain()
-            if (data.isNullOrEmpty()) {
-                emit(RemoteResponse.Empty)
-            } else {
-                emit(RemoteResponse.Success(data))
-            }
+            emit(
+                if (data.isNullOrEmpty()) RemoteResponse.Empty else RemoteResponse.Success(data)
+            )
         } catch (e: Exception) {
             emit(RemoteResponse.Error(e.message.toString()))
         }
@@ -77,11 +73,9 @@ class MovieRepositoryImpl(private val movieService: MovieService) : MovieReposit
             emit(RemoteResponse.Loading)
             val response = movieService.searchMovie(query)
             val data = response.results?.toDomain()
-            if (data.isNullOrEmpty()) {
-                emit(RemoteResponse.Empty)
-            } else {
-                emit(RemoteResponse.Success(data))
-            }
+            emit(
+                if (data.isNullOrEmpty()) RemoteResponse.Empty else RemoteResponse.Success(data)
+            )
         } catch (e: Exception) {
             emit(RemoteResponse.Error(e.message.toString()))
         }

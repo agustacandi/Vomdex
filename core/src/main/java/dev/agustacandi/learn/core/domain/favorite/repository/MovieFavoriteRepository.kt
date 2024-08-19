@@ -1,6 +1,5 @@
 package dev.agustacandi.learn.core.domain.favorite.repository
 
-import dev.agustacandi.learn.core.data.favorite.local.entity.MovieEntity
 import dev.agustacandi.learn.core.domain.movie.model.Movie
 import kotlinx.coroutines.flow.Flow
 

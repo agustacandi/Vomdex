@@ -35,7 +35,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     ): FragmentDetailBinding = FragmentDetailBinding.inflate(inflater, container, false)
 
     override fun initIntent() {
-        movieId = arguments?.getString("movieId")
+        movieId = arguments?.getString(ConstVal.KEY_MOVIE_ID)
     }
 
     override fun initUI() {
