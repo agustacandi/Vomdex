@@ -24,7 +24,6 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initIntent()
-        initUI()
         initAction()
         initProcess()
         initObservers()
@@ -35,6 +34,11 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() {
         _binding = null
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     abstract fun getViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,8 +46,6 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() {
     ): VB
 
     abstract fun initIntent()
-
-    abstract fun initUI()
 
     abstract fun initAction()
 
