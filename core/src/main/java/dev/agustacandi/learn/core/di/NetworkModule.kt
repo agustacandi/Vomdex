@@ -7,12 +7,14 @@ import dev.agustacandi.learn.core.data.credits.remote.network.CreditService
 import dev.agustacandi.learn.core.data.lib.HeaderInterceptor
 import dev.agustacandi.learn.core.data.movie.remote.network.MovieService
 import dev.agustacandi.learn.core.utils.ConstVal
+import okhttp3.CertificatePinner
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.concurrent.TimeUnit
 
 // Logging Interceptor for debugging purposes (only run in debug mode)
 private val loggingInterceptor = HttpLoggingInterceptor().setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE)
@@ -24,9 +26,18 @@ private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 val networkModule = module {
     // Single instance of OkHttpClient
     single {
+        val certificatePinner = CertificatePinner.Builder()
+            .add(ConstVal.HOSTNAME, ConstVal.PIN_CERT)
+            .add(ConstVal.HOSTNAME, ConstVal.PIN_CERT_2)
+            .add(ConstVal.HOSTNAME, ConstVal.PIN_CERT_3)
+            .build()
+
         OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .addInterceptor(getHeaderInterceptor())
+            .connectTimeout(120, TimeUnit.SECONDS)
+            .readTimeout(120, TimeUnit.SECONDS)
+            .certificatePinner(certificatePinner)
             .build()
     }
 

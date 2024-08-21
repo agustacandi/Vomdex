@@ -26,11 +26,6 @@
     <style name="VexHeadingText" parent="FontBold">
         <item name="android:textSize">18sp</item>
     </style>
-
-    <style name="VexText" parent="FontRegular">
-        <item name="android:textSize">14sp</item>
-    </style>
-
     <style name="VexImageStyle">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>

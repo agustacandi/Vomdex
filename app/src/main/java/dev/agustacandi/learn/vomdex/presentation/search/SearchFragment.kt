@@ -25,9 +25,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
     override fun initIntent() {
     }
 
-    override fun initUI() {
-    }
-
     override fun initAction() {
         binding.apply {
             searchBar.setOnClickListener {

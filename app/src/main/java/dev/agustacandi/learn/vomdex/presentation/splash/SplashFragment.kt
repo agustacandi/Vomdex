@@ -22,20 +22,17 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
     override fun initIntent() {
     }
 
-    override fun initUI() {
-    }
-
     override fun initAction() {
     }
 
     override fun initProcess() {
-    }
-
-    override fun initObservers() {
         lifecycleScope.launch {
             delay(ConstVal.SPLASH_SCREEN_DURATION)
             findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
         }
+    }
+
+    override fun initObservers() {
     }
 
 }
