@@ -19,6 +19,11 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
 
+        buildConfigField("String", "HOSTNAME", "\"${project.findProperty("HOSTNAME")}\"")
+        buildConfigField("String", "PIN_CERT", "\"${project.findProperty("PIN_CERT")}\"")
+        buildConfigField("String", "PIN_CERT_2", "\"${project.findProperty("PIN_CERT_2")}\"")
+        buildConfigField("String", "PIN_CERT_3", "\"${project.findProperty("PIN_CERT_3")}\"")
+        buildConfigField("String", "PASSPHRASE_DB", "\"${project.findProperty("PASSPHRASE_DB")}\"")
         buildConfigField("String", "BASE_URL", "\"${project.findProperty("BASE_URL")}\"")
         buildConfigField("String", "API_KEY", "\"${project.findProperty("API_KEY")}\"")
 
@@ -63,4 +68,8 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+
+    // Encrypt DB
+    implementation(libs.android.database.sqlcipher)
+    implementation(libs.androidx.sqlite.ktx)
 }

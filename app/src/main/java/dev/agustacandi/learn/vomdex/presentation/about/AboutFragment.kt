@@ -16,9 +16,6 @@ class AboutFragment : BaseFragment<FragmentAboutBinding>() {
     override fun initIntent() {
     }
 
-    override fun initUI() {
-    }
-
     override fun initAction() {
     }
 

@@ -38,9 +38,6 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
         movieId = arguments?.getString(ConstVal.KEY_MOVIE_ID)
     }
 
-    override fun initUI() {
-    }
-
     override fun initAction() {
         binding.apply {
             backButton.setOnClickListener {

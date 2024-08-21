@@ -28,9 +28,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun initIntent() {
     }
 
-    override fun initUI() {
-    }
-
     override fun initAction() {
         binding.favoriteButton.setOnClickListener {
             try {
