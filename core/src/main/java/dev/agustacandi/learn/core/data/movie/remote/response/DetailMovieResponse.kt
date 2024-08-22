@@ -1,7 +1,9 @@
 package dev.agustacandi.learn.core.data.movie.remote.response
 
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
 
+@Keep
 data class DetailMovieResponse(
 
 	@Json(name="original_language")
@@ -83,6 +85,7 @@ data class DetailMovieResponse(
 	val status: String? = null
 )
 
+@Keep
 data class ProductionCompaniesItem(
 
 	@Json(name="logo_path")
@@ -98,6 +101,7 @@ data class ProductionCompaniesItem(
 	val originCountry: String? = null
 )
 
+@Keep
 data class BelongsToCollection(
 
 	@Json(name="backdrop_path")
@@ -113,6 +117,7 @@ data class BelongsToCollection(
 	val posterPath: String? = null
 )
 
+@Keep
 data class SpokenLanguagesItem(
 
 	@Json(name="name")
@@ -125,6 +130,7 @@ data class SpokenLanguagesItem(
 	val englishName: String? = null
 )
 
+@Keep
 data class GenresItem(
 
 	@Json(name="name")
@@ -134,6 +140,7 @@ data class GenresItem(
 	val id: Int? = null
 )
 
+@Keep
 data class ProductionCountriesItem(
 
 	@Json(name="iso_3166_1")

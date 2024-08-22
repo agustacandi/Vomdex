@@ -1,7 +1,9 @@
 package dev.agustacandi.learn.core.data.credits.remote.response
 
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
 
+@Keep
 data class CreditResponse(
 
 	@Json(name="cast")
@@ -14,6 +16,7 @@ data class CreditResponse(
 	val crew: List<CrewItem>? = null
 )
 
+@Keep
 data class CrewItem(
 
 	@Json(name="gender")
@@ -50,6 +53,7 @@ data class CrewItem(
 	val job: String? = null
 )
 
+@Keep
 data class CastItem(
 
 	@Json(name="cast_id")
