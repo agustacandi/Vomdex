@@ -68,8 +68,4 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
-
-    // Encrypt DB
-    implementation(libs.android.database.sqlcipher)
-    implementation(libs.androidx.sqlite.ktx)
 }

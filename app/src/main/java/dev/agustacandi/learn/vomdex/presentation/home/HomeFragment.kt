@@ -2,6 +2,7 @@ package dev.agustacandi.learn.vomdex.presentation.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -62,6 +63,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                         is RemoteResponse.Error -> {
                             showShimmer(false, shimmerNowPlaying, rvNowPlaying)
                             Helper.showToast(requireActivity(), nowPlaying.errorMessage)
+                            Log.e("AAA", nowPlaying.errorMessage)
                         }
                         is RemoteResponse.Empty -> {
                             showShimmer(false, shimmerNowPlaying, rvNowPlaying)
@@ -91,6 +93,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                         is RemoteResponse.Error -> {
                             showShimmer(false, shimmerPopular, rvPopular)
                             Helper.showToast(requireActivity(), popular.errorMessage)
+                            Log.e("AAA", popular.errorMessage)
                         }
                         is RemoteResponse.Empty -> {
                             showShimmer(false, shimmerPopular, rvPopular)
@@ -125,6 +128,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                         is RemoteResponse.Error -> {
                             showShimmer(false, shimmerTopRated, rvTopRated)
                             Helper.showToast(requireActivity(), topRated.errorMessage)
+                            Log.e("AAA", topRated.errorMessage)
                         }
                         is RemoteResponse.Empty -> {
                             showShimmer(false, shimmerTopRated, rvTopRated)
@@ -159,6 +163,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                         is RemoteResponse.Error -> {
                             showShimmer(false, shimmerUpcoming, rvUpcoming)
                             Helper.showToast(requireActivity(), upcoming.errorMessage)
+                            Log.e("AAA", upcoming.errorMessage)
                         }
                         is RemoteResponse.Empty -> {
                             showShimmer(false, shimmerUpcoming, rvUpcoming)
